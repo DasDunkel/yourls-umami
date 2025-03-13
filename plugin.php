@@ -10,6 +10,14 @@ Author URI: https://dunk.dev
 // No direct call
 if( !defined( 'YOURLS_ABSPATH' ) ) die();
 
+// Uncomment & edit below code to automatically add tracking script to all pages if the user is not logged in
+//yourls_add_action( 'html_head_meta', 'add_umami_script');
+//function add_umami_script( $context ) {
+//	if (yourls_is_valid_user() !== true) {
+//		echo '<script defer src="https://umami.example.com/script.js" data-website-id="WebsiteID"></script>';
+//	}
+//}
+
 // Hook on basic redirect
 yourls_add_action( 'redirect_shorturl', 'ping_umami' );
 function ping_umami( $args ) {
